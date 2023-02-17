@@ -10,6 +10,16 @@ const GET_ALL_MOVIES = gql`
 	}
 `
 
+const GET_ALL_ACTORS = gql`
+	{
+		actors {
+			id
+			name
+			age
+		}
+	}
+`
+
 const GET_MOVIE_BY_ID = gql`
 	query movie($id: ID!) {
 		movie(id: $id) {
@@ -25,5 +35,6 @@ const GET_MOVIE_BY_ID = gql`
 
 export default {
 	GET_ALL_MOVIES,
+	GET_ALL_ACTORS,
 	GET_MOVIE_BY_ID,
 }

@@ -86,8 +86,8 @@ export default function MovieDetail() {
 							<p className="text-xs text-orange-500 font-bold">Actors</p>
 							<Link to={`/actors/${data?.movie?.actor?.id}`}>
 								<div className="flex flex-row">
-									<div className="flex flex-col justify-center items-center w- cursor-pointer">
-										<div className="mt-4 rounded-full bg-cyan-800 min-w-[50px] h-[50px] flex justify-center items-center">
+									<div className="flex flex-col justify-center items-center cursor-pointer transition hover:scale-95">
+										<div className="mt-4 rounded-full bg-cyan-800 min-w-[50px] h-[50px] flex justify-center items-center transition hover:bg-cyan-900">
 											<FaUser size={20} color="white" />
 										</div>
 										<p>{data?.movie?.actor?.name.split(' ')[0]}</p>

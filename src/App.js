@@ -4,6 +4,9 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 // setting proxy: https://github.com/Yelp/yelp-fusion/issues/579
 const client = new ApolloClient({
 	uri: process.env.REACT_APP_GRAPH_URL,
+	fetchOptions: {
+		mode: 'no-cors',
+	},
 	cache: new InMemoryCache(),
 })
 
