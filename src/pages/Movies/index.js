@@ -2,9 +2,14 @@ import React from 'react'
 import CardMovie from '../../components/CardMovie'
 import { useQuery } from '@apollo/client'
 import query from '../../graphql'
+import { Navigate } from 'react-router-dom'
 
 export default function Movies() {
 	const { data, loading, error } = useQuery(query.GET_ALL_MOVIES)
+
+	if (error) {
+		return <Navigate to="/error" />
+	}
 
 	return (
 		<>

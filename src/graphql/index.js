@@ -16,6 +16,9 @@ const GET_ALL_ACTORS = gql`
 			id
 			name
 			age
+			movies {
+				id
+			}
 		}
 	}
 `
@@ -33,8 +36,23 @@ const GET_MOVIE_BY_ID = gql`
 	}
 `
 
+const GET_ACTOR_BY_ID = gql`
+	query actor($id: ID!) {
+		actor(id: $id) {
+			name
+			age
+			movies {
+				id
+				name
+				genre
+			}
+		}
+	}
+`
+
 export default {
 	GET_ALL_MOVIES,
 	GET_ALL_ACTORS,
 	GET_MOVIE_BY_ID,
+	GET_ACTOR_BY_ID,
 }

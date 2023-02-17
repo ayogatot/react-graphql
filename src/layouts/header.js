@@ -11,14 +11,14 @@ export default function Header() {
 					</Link>
 				</div>
 				<div className="w-1/2 flex flex-row md:justify-end sm:justify-center md:pb-0 sm:pb-2">
-					<Link to={'/actors'}>
+					<Link to={'/movies'}>
 						<p className="mr-5 text-orange-500 font-semibold md:text-xl sm:text-sm cursor-pointer border-b-2 border-b-transparent hover:text-orange-600 hover:border-b-orange-600  transition">
-							Actors
+							Movies
 						</p>
 					</Link>
-					<Link to={'/genres'}>
-						<p className="text-orange-500 font-semibold md:text-xl sm:text-sm cursor-pointer border-b-2 border-b-transparent hover:text-orange-600 hover:border-b-orange-600  transition">
-							Genres
+					<Link to={'/actors'}>
+						<p className=" text-orange-500 font-semibold md:text-xl sm:text-sm cursor-pointer border-b-2 border-b-transparent hover:text-orange-600 hover:border-b-orange-600  transition">
+							Actors
 						</p>
 					</Link>
 				</div>

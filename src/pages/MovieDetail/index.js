@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaImage, FaUser, FaArrowLeft } from 'react-icons/fa'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import query from '../../graphql'
 
@@ -9,6 +9,10 @@ export default function MovieDetail() {
 	const { data, loading, error } = useQuery(query.GET_MOVIE_BY_ID, { variables: { id: params.id } })
 
 	const rating = Math.floor(Math.random() * 5)
+
+	if (error) {
+		return <Navigate to="/error" />
+	}
 
 	return (
 		<>
