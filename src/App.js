@@ -1,13 +1,9 @@
 import { BaseRoutes } from './routes'
-import { ApolloProvider, ApolloClient, InMemoryCache, HttpLink } from '@apollo/client'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 
+// setting proxy: https://github.com/Yelp/yelp-fusion/issues/579
 const client = new ApolloClient({
-	// link: new HttpLink({
-	uri: 'https://cors-anywhere.herokuapp.com/https://n7b67.sse.codesandbox.io/graphql',
-	fetchOptions: {
-		mode: 'no-cors',
-	},
-	// }),
+	uri: process.env.REACT_APP_GRAPH_URL,
 	cache: new InMemoryCache(),
 })
 

@@ -1,19 +1,26 @@
 import React from 'react'
 import CardMovie from '../../components/CardMovie'
 import { useQuery } from '@apollo/client'
-
 import query from '../../graphql'
 
-import dummyData from '../../data'
-
 export default function Movies() {
-	const { data, loading, error } = useQuery(query.GET_FILMS)
+	const { data, loading, error } = useQuery(query.GET_ALL_MOVIES)
+
 	return (
-		// <div className="flex flex-row flex-wrap sm:justify-center md:justify-start bg-white">
-		<div className="grid md:grid-rows-3 md:grid-flow-col sm:grid-cols-1 mb-10">
-			{dummyData.movies.map((movie) => (
-				<CardMovie key={movie.id} data={movie} />
-			))}
-		</div>
+		<>
+			{loading ? (
+				<div className="grid md:grid-rows-2 md:grid-flow-col sm:grid-cols-1 mb-10">
+					{Array.apply(null, Array(8)).map((_, key) => {
+						return <CardMovie key={key} loading={true} />
+					})}
+				</div>
+			) : (
+				<div className="grid md:grid-rows-3 md:grid-flow-col sm:grid-cols-1 mb-10">
+					{data.movies.map((movie) => (
+						<CardMovie key={movie.id} data={movie} />
+					))}
+				</div>
+			)}
+		</>
 	)
 }
