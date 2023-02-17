@@ -6,7 +6,7 @@ export default function CardActor({ data, loading }) {
 	return (
 		<>
 			{loading ? (
-				<div className="m-4 transition animate-pulse w-full flex flex-row cursor-pointer shadow-lg">
+				<div className="transition animate-pulse w-full flex flex-row cursor-pointer shadow-lg">
 					<div className="sm:w-[300px] md:w-[250px] h-[300px] rounded-l-md bg-cyan-800 flex justify-center items-center p-4">
 						<div className="w-[150px] h-[150px] rounded-full bg-slate-400 flex justify-center items-center" />
 					</div>

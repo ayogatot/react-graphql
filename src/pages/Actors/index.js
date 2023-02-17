@@ -20,7 +20,7 @@ export default function Actors() {
 					})}
 				</div>
 			) : (
-				<div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 mb-10">
+				<div className="grid md:grid-cols-3 sm:grid-cols-1 gap-3 mb-10">
 					{data.actors.map((movie) => (
 						<CardActor key={movie.id} data={movie} />
 					))}

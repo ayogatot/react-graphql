@@ -5,7 +5,7 @@ import Img from '../../assets/images/proxy.png'
 export default function Error() {
 	return (
 		<div className="w-3/4 min-h-[500px] flex flex-col items-center justify-center my-20 mb-10 bg-cyan-800 p-10 rounded-lg">
-			<p className="text-9xl font-bold text-cyan-200">OOPS!</p>
+			<p className="md:text-9xl sm:text-6xl font-bold text-cyan-200">OOPS!</p>
 			<p className="text-4xl text-cyan-100 mt-4 text-center bg-cyan-900 p-4 rounded-sm">
 				I'm sorry this happen because the proxy need to be activated before access this website.
 			</p>
